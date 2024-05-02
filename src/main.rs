@@ -53,7 +53,7 @@ fn main() {
 }
 
 fn get_names<>() -> HashMap<String, (Vec<u64>, Vec<u64>, u64, u64)> {
-    let file = String::from_utf8(std::fs::read("E:\\SJSU\\CS\\131\\finalproj\\traffic.txt").unwrap()).unwrap();
+    let file = String::from_utf8(std::fs::read("<your path here>\\traffic.txt").unwrap()).unwrap();
     let regex = Regex::new(r"(?m)([\r\n])+").unwrap();
     let split = regex.split(file.as_str());
     let mut map: HashMap<String, (Vec<u64>, Vec<u64>, u64, u64)> = HashMap::new(); // Traffic Count, Road Quality, # of traffic entries, # of quality entries
@@ -69,7 +69,7 @@ fn get_names<>() -> HashMap<String, (Vec<u64>, Vec<u64>, u64, u64)> {
             map.insert(String::from(s), tuple);
         }
     }
-    let file = String::from_utf8(std::fs::read("E:\\SJSU\\CS\\131\\finalproj\\quality.txt").unwrap()).unwrap();
+    let file = String::from_utf8(std::fs::read("<your path here>\\quality.txt").unwrap()).unwrap();
     let split = regex.split(file.as_str());
     for s in split {
         let regex = Regex::new(r"(?m),").unwrap();
@@ -87,7 +87,7 @@ fn get_names<>() -> HashMap<String, (Vec<u64>, Vec<u64>, u64, u64)> {
 }
 
 fn get_traffic(mut map: HashMap<String, (Vec<u64>, Vec<u64>, u64, u64)>) -> HashMap<String, (Vec<u64>, Vec<u64>, u64, u64)> {
-    let file = String::from_utf8(std::fs::read("E:\\SJSU\\CS\\131\\finalproj\\traffic.txt").unwrap()).unwrap();
+    let file = String::from_utf8(std::fs::read("<your path here>\\traffic.txt").unwrap()).unwrap();
     let regex = Regex::new(r"(?m)([\r\n])+").unwrap();
     let split = regex.split(file.as_str());
     for s in split {
@@ -114,7 +114,7 @@ fn get_traffic(mut map: HashMap<String, (Vec<u64>, Vec<u64>, u64, u64)>) -> Hash
 }
 
 fn get_quality(mut map: HashMap<String, (Vec<u64>, Vec<u64>, u64, u64)>) -> HashMap<String, (Vec<u64>, Vec<u64>, u64, u64)> {
-    let file = String::from_utf8(std::fs::read("E:\\SJSU\\CS\\131\\finalproj\\quality.txt").unwrap()).unwrap();
+    let file = String::from_utf8(std::fs::read("<your path here>\\quality.txt").unwrap()).unwrap();
     let regex = Regex::new(r"(?m)([\r\n])+").unwrap();
     let split = regex.split(file.as_str());
     for s in split {
